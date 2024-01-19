@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Information</title>
+    <!-- Add CSS styles for App Store-like styling -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Slick Carousel CSS -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@sakun/system.css@0.1.11/dist/system.css" />
+</head>
+
+<body>
+    <div class="app-details">
+        <div class="app-header">
+            <img src="app-store-logo.png" alt="App Store Logo">
+            <h1 id="appTitle"></h1>
+            <p id="appSummary"></p>
+        </div>
+        <div class="app-info">
+            <p id="appDescription"></p>
+            <p id="appAppId"></p>
+            <p id="appInstalls"></p>
+            <p id="appScore"></p>
+            <p id="appRatings"></p>
+            <p id="appGenre"></p>
+        </div>
+        <div class="app-icon">
+            <img id="appIcon" alt="App Icon">
+        </div>
+    </div>
+
+    <!-- Screenshot Images Carousel -->
+    <div class="screenshot-carousel" id="screenshotCarousel">
+        <!-- Slick Carousel will populate this section -->
+    </div>
+
+    <div class="app-reviews">
+        <h2>Reviews:</h2>
+        <div id="reviews">
+            <!-- Reviews will be populated here -->
+        </div>
+    </div>
+
+    <!-- Include Slick Carousel JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        // JSON data for the app
+        const appData = {
+            "language": "pt",
+            "appId": "br.com.bmn.my_debtors",
+            "title": "Me Deve - Controle de vendas",
+            "description": "Manage your customers and sales in a practical, fast and very intuitive way...",
+            "summary": "Control your sales in the palm of your hand and don't forget to collect",
+            "installs": "100,000+",
+            "minInstalls": 100000,
+            "maxInstalls": 196171,
+            "score": 4.234146,
+            "scoreText": "4.2",
+            "ratings": 4073,
+            // Add more data here
+            "icon": "https://play-lh.googleusercontent.com/yqGc4TfO-S1i2zGYlsKlA9WMbDAqr8dGxpJhYQbOgADg7EssWa8MutDb8rjzrvTPFt8",
+            "screenshots": [
+                "https://play-lh.googleusercontent.com/9JzahMj4pBHxE5l7XT759JpICEe3S6J-9fONUvyb1ScKRRoDBJ7IzKGzfGn36Ar0Ng",
+                "https://play-lh.googleusercontent.com/S6fEi_lvDqjSpyuon2PaNe-xUQ6vsxF79H3GaEJdzwotF3_C7MNGw14aXthmWMF-PEY",
+                "https://play-lh.googleusercontent.com/gXDQ3ItkRWu551LZ-5qi4oGf3OVLnuRSjlgROseH-MunZTaFYOaFkIiIIg1UirbsvoXn",
+                "https://play-lh.googleusercontent.com/46XmNYyUpRHZ4cxGqIQ5gxf-TXw_f7vAff_Q2djbhwnhgmK_OhxlLbjPCEZPf_2w1A",
+                "https://play-lh.googleusercontent.com/KcWkc3twegwkeLLtOi2yNEYSCoBPG22QxTJRyw1HKniStDliyrA1JQxKLVZgFmIaL7Ke",
+                "https://play-lh.googleusercontent.com/N35SBH8EW4fhxdBiSsixb6hpGWgg16jwibhMHPhmXOiNOXLx3KCi0UcxuQ7q30blKtZm",
+                "https://play-lh.googleusercontent.com/CKeOAG7esqq0KJQx-0SLF3Ku5KC9zUBLHfP7_5WbJpVSarmP57swqy_p262KiRzQLU_C",
+                "https://play-lh.googleusercontent.com/_jYPHN-sLM8JX-EL0XQWrZUGBU2uMHEioL30o028Gve8Md7AlS_U23idVtDos6R1a-0"
+            ],
+            "reviews": [
+                {
+                    "id": "87c39232-cf3d-4bfa-b765-8c877a70905c",
+                    "userName": "Patricky Naval",
+                    "userImage": "https://play-lh.googleusercontent.com/a-/ALV-UjXxNRJyY7jHlSa4ixoL1E8MLboaB0Wz1iFxcuk_PRLRAIk8",
+                    "date": "2020-06-04T18:26:18.565Z",
+                    "score": 4,
+                    "scoreText": "4",
+                    "url": "https://play.google.com/store/apps/details?id=br.com.bmn.my_debtors&reviewId=87c39232-cf3d-4bfa-b765-8c877a70905c",
+                    "title": null,
+                    "text": "Aplicativo bem legal, porém depois da atualização não estou conseguindo logar nem ver as cobranças que já tinha.",
+                    "replyDate": "2020-06-04T18:27:55.369Z",
+                    "replyText": "Olá Patrick,\n\nNos encaminhe um e-mail por gentileza\n\nAbraços",
+                    "version": "3.0.1",
+                    "thumbsUp": 1,
+                    "criterias": []
+                },
+                {
+                    "id": "a6ae8254-8d4a-4624-afe1-086496d81b42",
+                    "userName": "Renan Souza",
+                    "userImage": "https://play-lh.googleusercontent.com/a-/ALV-UjUaofJQ1V00XmQlqTKiMx_nmA_RvlxnpYXzp7Awa3CYtC0",
+                    "date": "2022-04-19T22:36:47.334Z",
+                    "score": 2,
+                    "scoreText": "2",
+                    "url": "https://play.google.com/store/apps/details?id=br.com.bmn.my_debtors&reviewId=a6ae8254-8d4a-4624-afe1-086496d81b42",
+                    "title": null,
+                    "text": "Baixei o APP, estava tudo maravilhoso, quando de repente esqueci a minha senha e mesmo com o link que eles me encaminharam por e-mail não consegui entrar, isso ja tem 2 semanas e com todas as minhas anotações paradas impossibilitado de entrar.",
+                    "replyDate": null,
+                    "replyText": null,
+                    "version": "4.0.9",
+                    "thumbsUp": 1,
+                    "criterias": []
+                }
+            ],
+            // Add more data here
+        };
+
+        // Function to populate the HTML elements with app data
+        function populateAppData() {
+            document.getElementById("appTitle").textContent = appData.title;
+            document.getElementById("appSummary").textContent = appData.summary;
+            document.getElementById("appDescription").textContent = appData.description;
+            document.getElementById("appAppId").textContent = `App ID: ${appData.appId}`;
+            document.getElementById("appInstalls").textContent = `Installs: ${appData.installs}`;
+            document.getElementById("appScore").textContent = `Score: ${appData.score}`;
+            document.getElementById("appRatings").textContent = `Ratings: ${appData.ratings}`;
+            document.getElementById("appGenre").textContent = `Genre: ${appData.genre}`;
+
+            // Icon Image
+            const iconImage = document.getElementById("appIcon");
+            iconImage.src = appData.icon;
+
+            // Screenshot Images Carousel
+            const screenshotCarousel = document.getElementById("screenshotCarousel");
+            appData.screenshots.forEach(screenshotUrl => {
+                const screenshotImage = document.createElement("img");
+                screenshotImage.src = screenshotUrl;
+                screenshotCarousel.appendChild(screenshotImage);
+            });
+
+            // Reviews Section
+            const reviewsSection = document.getElementById("reviews");
+            appData.reviews.forEach(review => {
+                const reviewDiv = document.createElement("div");
+                reviewDiv.className = "review";
+                reviewDiv.innerHTML = `
+                    <img src="${review.userImage}" alt="${review.userName}'s Image">
+                    <p>${review.text}</p>
+                    <p>Score: ${review.scoreText}</p>
+                `;
+                reviewsSection.appendChild(reviewDiv);
+            });
+        }
+
+        // Call the function to populate the HTML with app data
+        populateAppData();
+
+        // Initialize Slick Carousel
+        $(document).ready(function () {
+            $('#screenshotCarousel').slick({
+                infinite: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                prevArrow: '<button class="slick-prev">Previous</button>',
+                nextArrow: '<button class="slick-next">Next</button>',
+            });
+        });
+    </script>
+</body>
+
+</html>

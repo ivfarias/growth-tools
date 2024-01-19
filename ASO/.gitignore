@@ -1,0 +1,38 @@
+# Ignore venv folders (Python virtual environments)
+venv/
+ENV/
+
+# Ignore compiled Python files
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignore Python cache
+*.py[cod]
+
+# Ignore IDE-specific files and folders
+.idea/
+.vscode/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore logs and other temporary files
+*.log
+*.tmp
+
+# Ignore database files
+*.sqlite3
+
+# Ignore package and distribution files
+*.egg-info/
+dist/
+build/
+
+# Ignore configuration files with sensitive information
+*.env
+
+# Ignore local settings
+settings.ini
+node_modules
